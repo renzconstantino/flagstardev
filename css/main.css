@@ -1,0 +1,536 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Pontano+Sans');
+@import url('https://fonts.googleapis.com/css?family=Khand');
+
+body, html{
+	height: 100%;
+	width: 100%;
+	background-color: #cccccc;
+	position: relative;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: #333333;
+  outline: 1px solid slategrey;
+}
+
+.accent-color{
+	color: #7484A5;
+}
+
+.black{
+	color: #1A1A1C;
+}
+
+/* ===================== */
+/*       F O N T S       */
+/* ===================== */
+
+@font-face {
+    font-family: 'LeagueSpartan'; /*a name to be used later*/
+    src: url('../fonts/LeagueSpartan-Bold.otf'); /*URL to font*/
+}
+
+@font-face{
+	font-family: 'MontserratReg';
+	src: url('../fonts/Montserrat-Regular.otf');
+}
+
+@font-face{
+	font-family: 'MontserratBold';
+	src: url('../fonts/Montserrat-ExtraBold.otf');
+}
+
+@font-face{
+	font-family: 'SegoeUI';
+	src: url('../fonts/segoeuil.ttf');
+}
+
+
+/* ===================== */
+/*     H E A D I N G     */
+/* ===================== */
+
+[data-slides] {
+    background-image: url(../img/homebg2.jpg); /* Default image. */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    transition: background-image 1s linear;
+}
+
+.heading{
+	height: 100%;
+	width: 100%;
+	padding: 8% 5% 5% 5%;
+}
+
+.heading h1{
+	position: relative;
+	display: inline-block;
+	color: white;
+	font-family: LeagueSpartan;
+	font-weight: bold;
+	font-size: 58px;
+}
+
+.heading h4{
+	position: relative;
+	display: inline-block;
+	color: white;
+	font-family: MontserratReg;
+}
+
+.row{
+	text-align: center;
+}
+
+.btn-read-more{
+	padding: 2% 5%;
+	color: white;
+	font-size: 18px;
+	font-family: 'Raleway', 'SegoeUI';
+	font-weight: 400;
+	border: solid 2px #E14658;
+	border-radius: 50px;
+	-webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-read-more:hover{
+	color: white;
+	text-decoration: none;
+	background-color: #E14658;
+}
+
+/* ===================== */
+/*      N A V B A R      */
+/* ===================== */
+/* Hover codes: https://github.com/IanLunn/Hover/edit/master/css/hover.css */
+
+nav{
+	text-align: center;
+	width: 100%;
+	left: 0;
+}
+
+.nav-bottom{
+	bottom: 0;
+	position: absolute;
+}
+
+.nav-placeholder{
+	margin-bottom: 0px;
+}
+
+nav li{
+	display: inline-block;
+	padding: 1.5% 4% 1.5% 4%;
+}
+
+nav li a{
+	color: white;
+	font-size: 18px;
+	font-family: 'Raleway', 'SegoeUI';
+	font-weight: 400;
+}
+
+nav li a:hover{
+	color: white;
+	text-decoration: none;
+}
+
+#logo-navbar-middle{
+	display: inline-block;
+	margin: 0 auto;
+}
+
+.inner-nav{
+	visibility: hidden; /* hides sub-menu */
+	opacity: 0;
+	position: absolute;
+	bottom: 100%;
+	width: 150%;
+	padding: 0 0;
+	transform: translateY(2em);
+	z-index: -1;
+	transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+	background-color: rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 0px 15px 3px #000;
+}
+
+.dropdown:hover .inner-nav{
+	visibility: visible; /* shows sub-menu */
+	opacity: 1;
+	z-index: 1;
+	transform: translateY(0%);
+	transition-delay: 0s, 0s, 0.3s;
+}
+
+.left-inner-nav{
+	right: 0;
+}
+
+.right-inner-nav{
+	left: 0;
+}
+
+.inner-nav li{
+	width: 100%;
+	left: 0;
+	padding: 5% 5%;
+}
+
+.inner-nav li:hover{
+	background-color: #333;
+}
+
+/* Wobble Horizontal */
+@-webkit-keyframes hvr-wobble-horizontal {
+  16.65% {
+    -webkit-transform: translateX(8px);
+    transform: translateX(8px);
+  }
+  33.3% {
+    -webkit-transform: translateX(-6px);
+    transform: translateX(-6px);
+  }
+  49.95% {
+    -webkit-transform: translateX(4px);
+    transform: translateX(4px);
+  }
+  66.6% {
+    -webkit-transform: translateX(-2px);
+    transform: translateX(-2px);
+  }
+  83.25% {
+    -webkit-transform: translateX(1px);
+    transform: translateX(1px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes hvr-wobble-horizontal {
+  16.65% {
+    -webkit-transform: translateX(8px);
+    transform: translateX(8px);
+  }
+  33.3% {
+    -webkit-transform: translateX(-6px);
+    transform: translateX(-6px);
+  }
+  49.95% {
+    -webkit-transform: translateX(4px);
+    transform: translateX(4px);
+  }
+  66.6% {
+    -webkit-transform: translateX(-2px);
+    transform: translateX(-2px);
+  }
+  83.25% {
+    -webkit-transform: translateX(1px);
+    transform: translateX(1px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+.hvr-wobble-horizontal {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+}
+.hvr-wobble-horizontal:hover, .hvr-wobble-horizontal:focus, .hvr-wobble-horizontal:active {
+  -webkit-animation-name: hvr-wobble-horizontal;
+  animation-name: hvr-wobble-horizontal;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+/* Sweep To Bottom */
+.hvr-sweep-to-bottom {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.hvr-sweep-to-bottom:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #E14658;
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-sweep-to-bottom:hover, .hvr-sweep-to-bottom:focus, .hvr-sweep-to-bottom:active {
+  color: white;
+}
+.hvr-sweep-to-bottom:hover:before, .hvr-sweep-to-bottom:focus:before, .hvr-sweep-to-bottom:active:before {
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1);
+}
+
+/* ============================ */
+/*    F I X E D  N A V B A R    */
+/* ============================ */
+
+.fixed{
+	position: fixed;
+	top: 0;
+	z-index: 999;
+	background-color: #333;
+	width: 100%;
+    -webkit-transition: all 0.9s ease-in-out;
+    transition: all 0.9s ease;
+}
+
+.fixed .logo{
+	height: 80px;
+	width: 80px;
+	float: left;
+	margin-left: 2%;
+}
+
+.fixed .logo img{
+	height: 80%;
+	width: 80%;
+	left: 0;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.fixed .logo-txt{
+	color: white;
+	text-decoration: none;
+	display: inline;
+}
+
+.fixed ul {
+	height: 100%;
+	width: 70%;
+	position: absolute;
+	margin-right: 0;
+	margin-left: 30%;
+    animation: 0.7s linear 0s slide;
+}
+
+@keyframes slide {
+  from { margin-left: 15%; }
+  to {
+    margin-left: 30%;
+  }
+}
+
+.fixed ul li{
+	padding: 0 5%;
+	height: 100%;
+	width: 24%;
+}
+
+.fixed ul li a{
+	width: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.fixed ul li .inner-nav{
+	top: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0);
+	box-shadow: 0px 0px 0px 0px #000;
+}
+
+.fixed .right-inner-nav{
+	left: -30%;
+}
+
+.fixed .inner-nav li{
+	width: 100%;
+	height: 70%;
+	left: 0;
+	padding: 5% 5%;
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.fixed .inner-nav li:hover{
+	background-color: #333;
+}
+
+.fixed .inner-nav li a{
+
+	font-size: 16px;
+}
+
+
+/* ===================== */
+/*    P A R A L L A X    */
+/* ===================== */
+
+.parallax {
+    height: 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.par1{
+    background-image: url("../img/parallax1.jpg");
+}
+
+.par2{
+	background-image: url("../img/parallax2.jpg");
+}
+
+.par3{
+	background-image: url("../img/parallax3.jpg");
+	color: #fff;
+}
+
+.par4{
+	background-image: url("../img/parallax4.jpg");
+	color: #C0B3A0;
+}
+
+.par3 .btn-par a, .par4 .btn-par a{
+	color: #fff;
+	font-weight: 400;
+}
+
+.btn-par{
+	position: relative;
+	display: block;
+	margin-top: 10%;
+}
+
+.btn-par-read-more{
+	padding: 2% 5%;
+	color: #333333;
+	font-size: 18px;
+	font-family: 'Raleway', 'SegoeUI';
+	font-weight: 600;
+	border: solid 2px #E14658;
+	border-radius: 50px;
+	-webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-par-read-more:hover{
+	color: white;
+	text-decoration: none;
+	background-color: #E14658;
+	font-weight: 400;
+}
+
+.parallax h5{
+	font-family: 'Raleway', 'SegoeUI';
+	font-weight: 800;
+	font-size: 20px;
+}
+
+.right-contents{
+	width: 50%;
+	height: 100%;
+	padding: 7% 5% 5% 10%;
+	float: right;
+	font-family: 'Raleway', 'SegoeUI';
+}
+
+.left-contents{
+	width: 50%;
+	height: 100%;
+	padding: 7% 10% 5% 5%;
+	float: left;
+	font-family: 'Raleway', 'SegoeUI';
+}
+
+.right-contents h1, .left-contents h1{
+	font-weight: 800;
+}
+
+.last-section{
+	min-height: 90%;
+	padding: 5% 5% 2% 5%;
+	font-family: 'Raleway';
+	font-size: medium;
+}
+
+.last-section .row .col-md-6{
+	padding: 0 5%;
+}
+
+.last-section h1{
+	margin-bottom: 5%;
+	text-align: center;
+	font-family: 'Raleway', 'SegoeUI';
+	font-weight: 800;
+}
+
+.last-section button{
+	padding: 2% 10%;
+	background-color: white;
+	border-color: #444;
+}
+
+.last-section button:hover{
+	border-color: #E14658;
+}
+
+.gmap-frame{
+	display: none;
+}
+
+.gmap:hover .gmap-frame{
+	display: block;
+	position: absolute;
+	z-index: 999;
+}
+
+footer{
+	height: 5%;
+	width: 100%;
+	background-color: black;
+	position: relative;
+	display: block;
+	bottom: 0;
+	color: white;
+	text-align: center;
+}
